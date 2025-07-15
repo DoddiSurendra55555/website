@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semi-Circle BMI Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>BMI Calculator</h1>
+
+  <div class="main-container">
+    <!-- Result (Left) -->
+    <div class="result-box">
+      <h2>Result</h2>
+      <p id="bmiValueText">BMI = ?</p>
+      <div class="bmi-gauge">
+        <svg viewBox="0 0 300 160" width="100%" height="160">
+          <!-- Arc segments -->
+          <path d="M 50 150 A 100 100 0 0 1 90 50" stroke="#b71c1c" stroke-width="20" fill="none" />
+          <path d="M 90 50 A 100 100 0 0 1 120 35" stroke="#4caf50" stroke-width="20" fill="none" />
+          <path d="M 120 35 A 100 100 0 0 1 180 35" stroke="#ffeb3b" stroke-width="20" fill="none" />
+          <path d="M 180 35 A 100 100 0 0 1 210 50" stroke="#ef5350" stroke-width="20" fill="none" />
+          <path d="M 210 50 A 100 100 0 0 1 250 150" stroke="#b71c1c" stroke-width="20" fill="none" />
+
+          <!-- Tick Marks -->
+          <g class="ticks" font-size="10" text-anchor="middle" fill="#000">
+            <text x="60" y="145">16</text>
+            <text x="75" y="120">17</text>
+            <text x="95" y="100">18.5</text>
+            <text x="140" y="75">25</text>
+            <text x="185" y="100">30</text>
+            <text x="220" y="120">35</text>
+            <text x="240" y="145">40</text>
+          </g>
+
+          <!-- Pointer -->
+          <line id="bmiPointer" x1="150" y1="150" x2="150" y2="50" stroke="#000" stroke-width="3" style="display: none;" />
+          <circle cx="150" cy="150" r="5" fill="gray" />
+        </svg>
+        <div id="bmiLabel" class="bmi-label">BMI = ?</div>
+      </div>
+    </div>
+
+    <!-- Form (Right) -->
+    <form id="bmiForm" class="form-box">
+      <label for="age">Age:</label>
+      <input type="number" id="age" required />
+
+      <label for="gender">Gender:</label>
+      <select id="gender" required>
+        <option value="">Select</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="height">Height (cm):</label>
+      <input type="number" id="height" step="0.1" required />
+
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" step="0.1" required />
+
+      <div class="button-group">
+        <button type="submit">Calculate BMI</button>
+        <button type="button" id="resetBtn">Reset</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Info Section -->
+  <section class="info-section">
+    <ul>
+      <li><strong>Healthy BMI range:</strong> 18.5 – 25 kg/m²</li>
+      <li><strong>Healthy weight for height:</strong> 59.9 – 81 kg</li>
+      <li><strong>BMI Prime:</strong> 0.8</li>
+      <li><strong>Ponderal Index:</strong> 11.1 kg/m³</li>
+    </ul>
+    <p>The BMI Calculator finds the body mass index given weight and height. Calculate your BMI and find the BMI weight category for your height. The calculator also finds the normal weight range given your height.
+
+Calculate BMI with weight in pounds, stones or kilograms. Enter height in inches, feet and inches, meters or centimeters.</p>
+<p>BMI Formulas
+Divide weight by height squared to find BMI. Note that you need to use kg and meters the standard units for the BMI formula are kg and meters. If you need other units of measure the calculator will convert among units for you.
+
+In metric units, using kg and meters:
+
+ BMI= weight in kg height2 in m
+BMI = weight ÷ height2
+
+In metric units: BMI = weight (kg) ÷ height2 (meters)
+In US units: BMI = weight (lb) ÷ height2 (inches) * 703
+See additional BMI formulas below for accurate calculations in metric or imperial units.</p>
+<p>What is BMI?
+The body mass index or BMI is a ratio of mass to height. It is calculated as kg per square meter or pounds per square inch of height. Numeric BMI values correspond to weight categories including underweight, normal, overweight and obese.
+
+BMI is used as an indicator of the relative healthiness of a person. The Centers for Disease Control (CDC) and the World Health Organization (WHO) recognize that people who are overweight or underweight are at higher risk for certain health conditions. BMI also enables health professionals to discuss bodyweight objectively with their patients.</p>
+<img src="./image.png">
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
