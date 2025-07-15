@@ -1,2 +1,2 @@
-# website
+This is a responsive Body Mass Index (BMI) Calculator web app built using HTML, CSS, and JavaScript. It features a dynamic semi-circular gauge that visually represents the BMI value with categorized color regions and labels.# website
 A responsive BMI (Body Mass Index) Calculator built with HTML, CSS, and JavaScript. Includes a smooth semi-circular gauge, real-time BMI calculation, category labels, and a dynamic pointer.
